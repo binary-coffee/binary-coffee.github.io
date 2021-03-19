@@ -1,0 +1,266 @@
+{
+	"HOT001": {
+		"title": "espresso",
+		"description": "100% Fazenda Da Lagoa Samba",
+		"video": "espresso.mp4",
+		"poster": "espresso.jpg",
+		"price": "5",
+		"hot-drink": true,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "1",
+				"2 shots": "2"
+			}
+		}
+	},
+	"HOT002": {
+		"title": "long black",
+		"description": "Espresso, h20",
+		"video": "long-black.mp4",
+		"poster": "long-black.jpg",
+		"price": "5",
+		"hot-drink": true,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			}
+		}
+	},
+	"HOT003": {
+		"title": "cappuccino",
+		"description": "Espresso, milk, milk foam",
+		"video": "cappucino.mp4",
+		"poster": "cappucino.jpg",
+		"price": "5",
+		"hot-drink": true,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			},
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"HOT004": {
+		"title": "café latte",
+		"description": "Espresso, steamed milk",
+		"video": "hot-or-iced-latte.mp4",
+		"poster": "hot-or-iced-latte.jpg",
+		"price": "5",
+		"hot-drink": true,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			},
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"HOT005": {
+		"title": "café mocha",
+		"description": "Espresso, 75% cocoa, milk",
+		"video": "hot-or-iced-mocha.mp4",
+		"poster": "hot-or-iced-mocha.jpg",
+		"price": "5",
+		"hot-drink": true,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			},
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"HOT006": {
+		"title": "café mint mocha",
+		"description": "75% cocoa, milk ,mint",
+		"video": "hot-or-iced-mint-mocha.mp4",
+		"poster": "hot-or-iced-mint-mocha.jpg",
+		"price": "5",
+		"hot-drink": true,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			},
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"HOT007": {
+		"title": "hot chocolate",
+		"description": "75% cocoa + milk",
+		"video": "hot-or-iced-chocolate.mp4",
+		"poster": "hot-or-iced-chocolate.jpg",
+		"price": "5",
+		"hot-drink": true,
+		"modifier": {
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"COLD001": {
+		"title": "iced black",
+		"description": "Espresso + h20",
+		"video": "iced-black.mp4",
+		"poster": "iced-black.jpg",
+		"price": "6",
+		"hot-drink": false,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			}
+		}
+	},
+	"COLD002": {
+		"title": "iced latte",
+		"description": "75% cocoa, milk, mint",
+		"video": "hot-or-iced-latte.mp4",
+		"poster": "hot-or-iced-latte.jpg",
+		"price": "6",
+		"hot-drink": false,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			},
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"COLD003": {
+		"title": "iced mocha",
+		"description": "75% cocoa, milk, mint",
+		"video": "hot-or-iced-mocha.mp4",
+		"poster": "hot-or-iced-mocha.jpg",
+		"price": "6",
+		"hot-drink": false,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			},
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"COLD004": {
+		"title": "iced mint mocha",
+		"description": "75% cocoa, milk, mint",
+		"video": "hot-or-iced-mint-mocha.mp4",
+		"poster": "hot-or-iced-mint-mocha.jpg",
+		"price": "6",
+		"hot-drink": false,
+		"modifier": {
+			"origin": {
+				"brazil": "0",
+				"ethopia": "1",
+				"decaf": "1"
+			},
+			"espresso": {
+				"1 shot": "0",
+				"2 shots": "1"
+			},
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	},
+	"COLD005": {
+		"title": "iced chocolate",
+		"description": "75% cocoa, milk, mint",
+		"video": "hot-or-iced-chocolate.mp4",
+		"poster": "hot-or-iced-chocolate.jpg",
+		"price": "6",
+		"hot-drink": false,
+		"modifier": {
+			"milk": {
+				"regular": "0",
+				"low-fat": "1",
+				"soy": "1",
+				"oat": "1"
+			}
+		}
+	}
+}

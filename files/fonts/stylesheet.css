@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Everett Mono';
+    src: url('EverettMono-Regular.woff2') format('woff2'),
+        url('EverettMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SM Maxe\'ville';
+    src: url('SMMaxeville-Regular.woff2') format('woff2'),
+        url('SMMaxeville-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

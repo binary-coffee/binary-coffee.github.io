@@ -1,0 +1,831 @@
+@font-face {
+    font-family: 'Everett Mono';
+    src: url('../fonts/EverettMono-Regular.woff2') format('woff2'),
+        url('../fonts/EverettMono-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'SM Maxeville';
+    src: url('../fonts/SMMaxeville-Regular.woff2') format('woff2'),
+        url('../fonts/SMMaxeville-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fakt Pro Blond';
+    src: url('../fonts/FaktPro-Blond.eot');
+    src: url('../fonts/FaktPro-Blond.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/FaktPro-Blond.woff2') format('woff2'),
+        url('../fonts/FaktPro-Blond.woff') format('woff'),
+        url('../fonts/FaktPro-Blond.ttf') format('truetype'),
+        url('../fonts/FaktPro-Blond.svg#FaktPro-Blond') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+
+body {
+  height: 1366px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  background-color: #fff;
+  @include bp(maxSM) {
+    -webkit-text-size-adjust: none;
+  }
+}
+html body{
+  opacity: 0;
+}
+html.ready body{
+  opacity: 1;
+}
+html.noScroll {
+  overflow: hidden; position: relative; height: 100%;
+}
+
+html.noScroll body {
+  overflow: hidden; position: fixed; width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0; padding: 0; font-weight: normal;
+}
+h1, h2, h3, h4{
+  font-family: 'SM Maxeville';
+}
+
+h2{
+  font-size: 36px;
+  line-height: 1.2;
+}
+h2.white{
+  color: #FFFFFF;
+}
+h4{
+  font-size: 26px;
+  line-height: 1.17;
+}
+p.desc{
+  font-family: 'Everett Mono';
+  font-size: 14px;
+  line-height: 1.28;
+  text-transform: uppercase;
+}
+
+
+
+
+
+.lazyVideo {
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  position: relative;
+  display: block;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  video {
+
+    opacity: 0;
+    @include transition(opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1));
+    &.loaded {
+      opacity: 1;
+    }
+  }
+}
+
+
+// swup
+.transition-fade {
+  transition: 1s;
+  opacity: 1;
+}
+.transition-left {
+  transition: 0.4s;
+  transform: translateX(0);
+}
+
+.fadeWipe{
+  transition: 0.7s cubic-bezier(0, 0, 0.58, 1);
+  transform: scaleX(0);
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+html.is-animating .transition-left {
+  transform: translate(-100px);
+}
+html.is-animating .fadeWipe {
+  transform: scaleX(1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+main {
+  .swupWrapper {
+    position: absolute; top: 0; left: 0; width: 100%; min-height: 100vh;
+    opacity: 0; pointer-events: none; z-index: 0; display: none;
+
+    &.showPage {
+      opacity: 1; pointer-events: auto; display: block; z-index: 99; cursor: pointer;
+    }
+  }
+}
+
+
+
+
+
+
+
+.mainPage{
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+
+
+
+
+
+.introWrap{
+  a{
+    display: flex;
+    justify-content: center; align-items: center;
+    height: 100vh;
+  }
+
+  svg {
+    width: 340px;
+    
+    path, rect {
+      animation-name: fillsLoop;
+      animation-duration: 60s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+  }
+
+  @keyframes fillsLoop {
+    0%   {fill: #F7F7F7;}
+    25%  {fill: #E3E0E0;}
+    50%  {fill: #EDE7DE;}
+    100% {fill: #C9CDD0;}
+  }  
+}
+
+.input-layout{
+  .inputWrap{
+    a{
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    img{
+      width: 160px;
+    }
+  }
+
+  .textBox{
+    text-align: center;
+    h2{
+      font-family: 'Fakt Pro Blond';
+      margin-top: 170px;
+      text-align: center;
+    }
+    .inputNameWrap{
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      input[type=text] {
+        width: 70%;
+        display: inline-block;
+        outline: none;
+        border: none;
+        background-color: transparent !important;
+        min-height: 43px;
+
+        color: #FFFFFF;
+        font-family: 'Fakt Pro Blond';
+        font-size: 36px;
+        line-height: 1.2;
+        text-align: center;
+      }
+      ::placeholder {
+        color: #FFFFFF;
+        opacity: 40%;
+        font-family: 'Fakt Pro Blond';
+        font-size: 36px;
+        line-height: 1.2;
+        text-align: center;
+      }
+    }
+
+    .nextBtn{
+      position: relative;
+      display: inline-block;
+      margin-top: 25px;
+      line-height: 1.11;
+      font-size: 20px;
+      font-family: 'Everett Mono';
+      color: #9B8A8A;
+      background-color: white;
+      padding: 15px 30px;
+      border-radius: 35px;
+      // letter-spacing: 1px;
+      cursor: pointer;
+      overflow: hidden;
+      @include transition(all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1));
+
+      &:active{
+        color: white;
+        background-color: #047ab6;
+        background-size: 100%;
+      }
+
+      &.disabled {
+        pointer-events: none; opacity: 0.3;
+      }
+    }     
+  }
+
+
+  .textBox2{
+    margin-top: 250px;
+    h3{
+      font-family: 'Everett Mono';
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      color: #FFF; opacity: 0.6;
+
+      &.white {
+        opacity: 1;
+      }
+    }    
+  }  
+
+
+}
+
+
+.completed-layout{
+  .inputWrap{
+    a{
+      display: flex;
+      justify-content: center;
+      margin-top: 120px;
+    }
+    img{
+      width: 160px;
+    }
+  }
+
+  .textBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+      font-family: 'Fakt Pro Blond';
+      margin-top: 330px;
+      text-align: center;
+    }
+
+    .appendText {
+      span {
+        text-transform: capitalize;
+      }
+    }
+
+    a.orderMore{
+      margin-top: 75px;
+      line-height: 1.11;
+      font-size: 20px;
+      font-family: 'Everett Mono';
+      color: #9B8A8A;
+      background-color: white;
+      padding: 15px 30px;
+      border-radius: 25px;
+      letter-spacing: 1px;
+      display: inline-block;
+      text-decoration: none;
+
+    }
+  }
+
+
+}
+
+
+
+.menulayout{
+  // max-height: 1366px;
+
+  .menuHeaderWrap{
+    position: relative;
+
+    .fixedWrap{
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding-top: 35px;
+      padding-left: 46px;
+      padding-right: 46px;
+      z-index: 2;
+      height: 200px;
+      width: 100%;
+      // width: 932px;
+      background: rgb(211,209,197);
+      background: -moz-linear-gradient(0deg, rgba(211,209,197,0) 0%, rgba(141,116,88,0.6699054621848739) 100%);
+      background: -webkit-linear-gradient(0deg, rgba(211,209,197,0) 0%, rgba(141,116,88,0.6699054621848739) 100%);
+      background: linear-gradient(0deg, rgba(211,209,197,0) 0%, rgba(141,116,88,0.6699054621848739) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d3d1c5",endColorstr="#8d7458",GradientType=1);
+      a{
+        display: inline-block;
+
+        img{
+          height: 100px;
+        }
+      }
+
+      .toggle-switchy{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -40%);
+      }
+      // new switch
+      // .switch {
+      //   position: absolute;
+      //   top: 40%;
+      //   left: 50%;
+      //   transform: translate(-50%, -40%);
+      //   width: 115px;
+      //   height: 45px;
+      // }
+      //
+      // .switch input {
+      //   display: none;
+      // }
+      //
+      // .slider {
+      //   position: absolute;
+      //   cursor: pointer;
+      //   top: 0;
+      //   left: 0;
+      //   right: 0;
+      //   bottom: 0;
+      //   background-color: #ca2222;
+      //   -webkit-transition: 0.4s;
+      //   transition: 0.4s;
+      // }
+      //
+      // .slider:before {
+      //   position: absolute;
+      //   content: "";
+      //   height: 26px;
+      //   width: 26px;
+      //   left: 4px;
+      //   bottom: 4px;
+      //   background-color: white;
+      //   -webkit-transition: 0.4s;
+      //   transition: 0.4s;
+      // }
+      //
+      // input:checked + .slider {
+      //   background-color: #2ab934;
+      // }
+      //
+      // input:focus + .slider {
+      //   box-shadow: 0 0 1px #2196F3;
+      // }
+      //
+      // input:checked + .slider:before {
+      //   -webkit-transform: translateX(55px);
+      //   -ms-transform: translateX(55px);
+      //   transform: translateX(55px);
+      // }
+      // /*------ ADDED CSS ---------*/
+      // .on {
+      //   display: none;
+      // }
+      //
+      // .off,
+      // .on {
+      //   color: white;
+      //   position: absolute;
+      //   transform: translate(-50%,-50%);
+      //   top: 50%;
+      //   left: 50%;
+      //   font-family: 'SM Maxeville';
+      //   font-size: 18px;
+      //   line-height: 1.11;
+      // }
+      //
+      // input:checked+ .slider .on {
+      //   display: block;
+      // }
+      //
+      // input:checked + .slider .off {
+      //   display: none;
+      // }
+      // /*--------- END --------*/
+      // /* Rounded sliders */
+      // .slider.round {
+      //   border-radius: 34px;
+      // }
+      //
+      // .slider.round:before {
+      //   border-radius: 50%;
+      // }
+      // end of new switch
+
+
+
+
+
+
+
+
+    }
+
+  }
+
+
+  .selectDrinksLayout{
+    padding-top: 200px;
+    .drinksWrapper{
+      display: flex;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .eaDrink{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 125px;
+        video{
+          display: block;
+          width: 210px;
+          height: 210px;
+          border-radius: 50%;
+          margin-bottom: 20px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        h4{          
+          font-family: 'Fakt Pro Blond';
+          margin-bottom: 10px; margin-top: 22px;
+          text-transform: capitalize;
+        }
+        .selectBtn{
+          position: relative;
+          display: inline-block;
+          margin-top: 25px;
+          line-height: 1.11;
+          font-size: 20px;
+          font-family: 'Everett Mono';
+          color: #9B8A8A;
+          background-color: white;
+          padding: 10px 30px;
+          border-radius: 25px;
+          // letter-spacing: 1px;
+          cursor: pointer;
+          overflow: hidden;
+          @include transition(all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1));
+
+          &:active{
+            color: white;
+            background-color: #047ab6;
+            background-size: 100%;
+          }
+        }
+
+        p.desc {
+          color: #585349;
+        }
+
+      }
+    }
+  }
+}
+
+
+.eaDrinkOverlay{
+  opacity: 0;
+  @include transition(all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1));
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(219, 220, 221, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  backdrop-filter: blur(2px);
+  .eaOverlay{
+    @include transition(all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1));
+    background-color: #FFFFFF;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    padding: 50px;
+    position: relative;
+    height: 926px;
+
+    .checkDrinksWrapper {
+      text-align: center;
+    }
+
+    .closeOverlay{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+    }
+    video{
+      display: block;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    h2{
+      margin-top: 40px;
+      text-transform: capitalize;
+      font-family: 'Fakt Pro Blond';
+    }
+    .modifier{
+      display: flex;
+      flex-direction: row;
+      margin-top: 70px;
+      .espressoWrap{
+        height: 22px;
+        margin-bottom: 70px;
+        display: flex;
+        flex-direction: row;
+        // justify-content: space-around;
+        align-items: center;
+        // margin-top: -6px;
+        label {
+          font-family: 'Everett Mono';
+          font-size: 22px;
+          line-height: 1;
+          text-transform: uppercase;
+          margin-left: 20px;
+        }
+        input[type=text] {
+          border: none;
+          width: 40px;
+          text-align: center;
+          font-family: 'Everett Mono';
+          font-size: 22px;
+          line-height: 1;
+          margin-left: 20px;
+        }
+
+        .button {
+          text-align: center;
+          font-family: 'Everett Mono';
+          font-size: 34px;
+          line-height: 1;
+          color: #9B8A8A;
+          margin-left: 20px;
+          @include transition(all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1));
+          &:active{
+            color: #0D0A04;
+          }
+        }
+        
+        .dec {
+          margin-left:30px;
+        }
+
+        .buttons {
+          padding: 20px 0 0 140px;
+        }
+      }
+      .originWrap{
+        margin-bottom: 70px;
+        label {
+          display: inline-block;
+          font-family: 'Everett Mono';
+          font-size: 22px;
+          line-height: 1;
+          text-transform: uppercase;
+          color: #9B8A8A;
+          opacity: 0.4;
+          margin-left: 20px;
+          cursor: pointer;
+          @include transition(all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1));
+          &:active {
+            opacity: 1;
+          }
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        input[type="radio"]:checked + label {
+          color: #9B8A8A; opacity: 1;
+        }
+      }
+
+      .milkWrap{
+        label {
+          display: inline-block;
+          font-family: 'Everett Mono';
+          font-size: 22px;
+          line-height: 1;
+          text-transform: uppercase;
+          color: #9B8A8A;
+          opacity: 0.4;
+          margin-left: 20px;
+          cursor: pointer;
+          @include transition(all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1));
+          &:active {
+            opacity: 1;
+          }
+
+        }
+
+        input[type="radio"] {
+          display: none;
+        }
+
+        input[type="radio"]:checked + label {
+          color: #9B8A8A; opacity: 1;
+        }
+      }
+      p.modSubhead{
+        font-family: 'Everett Mono';
+        font-size: 22px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #0D0A04;
+        margin-bottom: 70px;
+      }
+
+    }
+
+    .confirmDrinks{
+      margin-top: 10px;
+      cursor: pointer;
+      h4{
+        font-family: 'Everett Mono';
+        font-size: 20px;
+        line-height: 2.16;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background-color: #9B8A8A;
+        padding: 5px 30px;
+        border-radius: 30px;
+        @include transition(all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1));
+
+        &:active{
+          color: #9B8A8A;
+          background-color: rgba(0, 0, 0, 0.15);
+          background-size: 100%;
+        }
+      }
+
+    }
+  }
+}
+
+
+.finalOrderOverlay{
+  background-color: transparent !important;
+  .eaOverlay{
+    background-color: transparent !important;
+    h2{
+      margin-bottom: 40px;
+    }
+    p.modSubhead{
+      font-family: 'Everett Mono';
+      font-size: 18px;
+      line-height: 1;
+      text-transform: uppercase;
+      color:#585349;
+      margin-bottom: 20px;
+    }
+
+    .finalCfm{
+      display: flex;
+      flex-direction: row;
+      margin-top: 60px;
+      p{
+        font-family: 'Everett Mono';
+        font-size: 20px;
+        line-height: 2.16;
+        text-transform: uppercase;
+        @include transition(all 0.6s cubic-bezier(0.4, 0.0, 0.2, 1));
+        padding: 5px 30px;
+        border-radius: 30px;
+        &:nth-of-type(1){
+          margin-right: 30px;
+          color: #FFFFFF;
+          background-color: rgba(0, 0, 0, 0.15);
+          &:active{
+            color: #9B8A8A;
+            background-color: #FFFFFF;
+            background-size: 100%;
+          }
+        }
+        &:nth-of-type(2){
+          color: #9B8A8A;
+          background-color: #FFFFFF;
+          &:active{
+            color: white;
+            background-color: rgba(0, 0, 0, 0.15);
+            background-size: 100%;
+          }
+        }
+      }
+    }
+  }
+  .closeOverlay{
+    display: none;
+  }
+}
+
+
+
+// background video
+
+.menuOverlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  @include transition(all 0.7s cubic-bezier(0.4, 0.0, 0.2, 1));
+}
+.hotOverlay{
+  background: #fffbde;
+
+  opacity: 0.4;
+
+}
+.coldOverlay{
+  background: #79E0FF;
+  opacity: 0.2;
+}
+.bg {
+  // width: 1024px;
+  // height: 100vh;
+  object-fit:cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: -2;
+  .bgvideo{
+    // width: 1024px;
+    // height: 100vh;
+    width: 100%;
+    height: auto;
+  }
+}
